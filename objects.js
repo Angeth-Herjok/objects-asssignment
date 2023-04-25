@@ -29,9 +29,20 @@ const products = [
   { name: 'Headphones', price: 80, category: 'Electronics' },
   { name: 'Shoes', price: 60, category: 'Clothing' },
 ];
-function productName(products){
-  
+function categoryOfProducts(products) {
+  let ProductsGrouping = {};
+  products.forEach(function(product) {
+    if (ProductsGrouping[product.category]) {
+      ProductsGrouping[product.category].push(product);
+    } else {
+      ProductsGrouping[product.category] = [product];
+    }
+  });
+  return ProductsGrouping;
 }
+let ProductsGrouping =categoryOfProducts(products)
+console.log( ProductsGrouping)
+
 // Given an array of objects, where each object represents a student with a name 
 // and an array of scores, write a function that returns a new array containing the names
 //  of all students whose average score is greater than or equal to 85.
@@ -67,6 +78,12 @@ const car = {
     console.log(`Make: ${this.make}, Model: ${this.model}, Year: ${this.year}`);
   },
 };
-
+function ageCar(car){
+  var currentAge=date().getYear();
+  var carYear=car.year;
+  var age=currentAge.carYear;
+  var car=car.age()
+console.log(carYear.age());
+}
 
 
