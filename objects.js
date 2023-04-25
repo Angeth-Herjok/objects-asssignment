@@ -1,21 +1,24 @@
 
 // Given an array of objects, each object representing a person with a name and age property,
 //  write a function that returns a new array containing the names of all people who are 18 years old or older.
-const people = [
+let people = [
   { name: 'Alice', age: 17 },
   { name: 'Eunice', age: 22 },
   { name: 'Charlie', age: 14 },
   { name: 'Max', age: 19 },
 ];
-const arrayNameAge=(people)=>{
-  const greaterAge=[]
-  const names=[]
-  for(let i=0;i<arrayNameAge.length;i++){
-    if((arrayNameAge[i].age<=maxAge)){
-      greaterAge.push(people)
+
+function greater(people) {
+  let bigPeople = []
+  for (let person of people) {
+    if (person.age >= 18) {
+     bigPeople.push(person.name)
     }
   }
+  return bigPeople
 }
+let names = greater(people)
+console.log(names)
 
 // Write a function that takes an array of objects, where each object represents a product
 //  with a name, price, and category property. The function should return an object that groups 
@@ -26,6 +29,9 @@ const products = [
   { name: 'Headphones', price: 80, category: 'Electronics' },
   { name: 'Shoes', price: 60, category: 'Clothing' },
 ];
+function productName(products){
+  
+}
 // Given an array of objects, where each object represents a student with a name 
 // and an array of scores, write a function that returns a new array containing the names
 //  of all students whose average score is greater than or equal to 85.
@@ -35,6 +41,19 @@ const students = [
   { name: 'Jim', scores: [70, 80, 75] },
   { name: 'Jill', scores: [85, 90, 84] },
 ];
+const greatStudents = greaterStudents(students)
+console.log(greatStudents)
+function greaterStudents(students) {
+  const greatStudents = []
+  for (const student of students) {
+    const scores = student.scores
+    const avgScore = scores.reduce((sum, score) => sum + score, 0) / scores.length
+    if (avgScore >= 85) {
+      greatStudents.push(student.name)
+    }
+  }
+  return greatStudents
+}
 // Given an object representing a car, with properties for the make, model, year,
 //  and a method to display the car's information, write a function that takes 
 //  the car object and adds a new method to the object called age. 
