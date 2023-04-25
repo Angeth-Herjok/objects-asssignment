@@ -79,10 +79,10 @@ const car = {
   },
 };
 function ageCar(car){
-  var currentAge=date().getYear();
-  var carYear=car.year;
-  var age=currentAge.carYear;
-  var car=car.age()
+   currentAge=date().getYear();
+   carYear=car.year;
+   age=currentAge.carYear;
+   car=car.age()
 console.log(carYear.age());
 }
 
